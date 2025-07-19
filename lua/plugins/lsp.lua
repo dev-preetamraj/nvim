@@ -82,8 +82,30 @@ return {
     local servers = {
       ts_ls = {},
       ruff = {},
-      pylsp = {},
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              -- IMPORTANT: This tells jedi to use the python from your activated venv
+              jedi = {
+                environment = vim.fn.exepath 'python3' or vim.fn.exepath 'python',
+              },
+              -- Using ruff for linting is highly recommended
+              ruff = {
+                enabled = true,
+              },
+              -- Disable other linters if you are using ruff
+              pycodestyle = { enabled = false },
+              pyflakes = { enabled = false },
+              pylint = { enabled = false },
+            },
+          },
+        },
+      },
       html = { filetypes = { 'html', 'twig', 'hbs' } },
+      emmet_ls = {
+        filetypes = { 'html', 'css', 'javascriptreact', 'typescriptreact' },
+      },
       cssls = {},
       tailwindcss = {},
       dockerls = {},
