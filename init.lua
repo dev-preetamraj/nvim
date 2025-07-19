@@ -28,3 +28,14 @@ require('lazy').setup {
   require 'plugins.indent-blankline',
   require 'plugins.misc',
 }
+
+vim.api.nvim_set_hl(0, 'TermNormal', { bg = 'none' })
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+
+    vim.wo.winhighlight = 'Normal:TermNormal,NormalFloat:TermNormal'
+  end,
+})
