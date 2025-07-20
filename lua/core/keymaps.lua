@@ -85,6 +85,12 @@ vim.keymap.set('n', '<leader>st', function()
   vim.cmd.wincmd 'J'
   vim.api.nvim_win_set_height(0, 10)
 end)
-
 -- Exit terminal mode with <esc>
 vim.keymap.set('t', '<Esc>', vim.api.nvim_replace_termcodes('<C-\\><C-n>', true, true, true))
+
+-- Move word-by-word in Insert Mode using your terminal's key codes
+vim.keymap.set('i', '<M-f>', '<C-o>w')
+vim.keymap.set('i', '<M-b>', '<C-o>b')
+
+-- Delete a whole word backward in Insert Mode
+vim.keymap.set('i', '<A-BS>', '<C-w>')

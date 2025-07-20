@@ -28,6 +28,7 @@ require('lazy').setup {
   require 'plugins.alpha',
   require 'plugins.indent-blankline',
   require 'plugins.misc',
+  require 'plugins.vim-visual-multi',
 }
 
 vim.api.nvim_set_hl(0, 'TermNormal', { bg = 'none' })
