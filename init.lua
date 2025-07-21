@@ -24,7 +24,7 @@ require('lazy').setup {
   require 'plugins.autocompletion',
   --require 'plugins.none-ls',
   require 'plugins.conform',
-  require 'lua.plugins.git-stuff',
+  require 'plugins.git-stuff',
   require 'plugins.alpha',
   require 'plugins.indent-blankline',
   require 'plugins.misc',
